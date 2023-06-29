@@ -1,0 +1,155 @@
+.application{
+    padding: 120px 0;
+    background-image: 
+        url(../img/application/item1.png), 
+        url(../img/application/item2.png),
+        url(../img/application/item3.png), 
+        url(../img/application/item4.png), 
+        url(../img/application/item5.png);
+    background-repeat: no-repeat;
+    background-size: 
+        24px 76px,
+        44px 49px,
+        71px 17px,
+        65px 45px,
+        256px 219px;
+    background-position: 
+        94px 114px,
+        50% 90%,
+        97% 97%,
+        50% 84px,
+        0 99%;
+
+    @media (max-width: 991px) {
+        padding: 60px 0;
+        background-image: 
+            url(../img/application/item1.png), 
+            url(../img/application/item2.png),
+            url(../img/application/item3.png), 
+            url(../img/application/item4.png), 
+            url(../img/application/item5.png);
+        background-repeat: no-repeat;
+        background-size: 
+            24px 76px,
+            44px 49px,
+            71px 17px,
+            65px 45px,
+            256px 219px;
+        background-position: 
+            93% 60px,
+            50% 90%,
+            91% 46%,
+            5% 45%,
+            -100px 106%;
+    
+    }
+    @media (max-width: $mobileSmall) {
+        padding: 40px 0 60px 0;
+        background-image: 
+            url(../img/application/item1.png), 
+            url(../img/application/item2.png),
+            url(../img/application/item3.png), 
+            url(../img/application/item4.png), 
+            url(../img/application/item5.png);
+        background-repeat: no-repeat;
+        background-size: 
+            24px 76px,
+            32px 35px,
+            52px 12px,
+            48px 32px,
+            182px 156px;
+        background-position: 
+            93% 60px,
+            94% 93%,
+            95% 53%,
+            5% 52%,
+            -100px 111%;
+    
+    }
+}
+.application__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 144px;
+    @media (max-width: 1200px) {
+        gap: 100px
+    }
+    @media (max-width: 991px) {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        &:first-child{
+            align-items: center;
+            @media (min-width: 991px) {
+                align-items: flex-end;
+            }
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h2{
+            margin-bottom: 0;
+        }
+        .button-big {
+            cursor: pointer;
+        }
+    }
+    
+    .applecation__images {
+        position: relative;
+        @media (max-width: 991px) {
+            display: flex;
+            justify-content: center;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 431px;
+            height: 431px;
+            background-image: url(../img/application/images_item.png);
+            background-repeat: no-repeat;
+            background-size: 431px 431px;
+            top: 14px;
+            right: -107px;
+            z-index: -1;
+            @media (max-width: 991px) {
+                right: auto;
+                left: 16%;
+                top: 23%;
+            }
+            @media (max-width: $mobileSmall) {
+                background-size: 350px 350px;
+                width: 350px;
+                height: 350px;
+                top: 17%;
+                left: 0;
+            }
+            @media (max-width: 410px) {
+                background-size: 300px 300px;
+                width: 300px;
+                height: 300px;
+                top: 17%;
+                left: 0;
+            }
+        }
+        img{
+            width: 533px;
+            height: 594px;
+            @media (max-width: 1200px) {
+                height: auto;
+                width: 470px;
+            }
+            @media (max-width: $mobileSmall) {
+                width: 90%;
+            }
+        }
+    }
+}
+

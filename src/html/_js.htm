@@ -1,0 +1,78 @@
+<script src="js/app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    
+    jQuery(document).ready(function($){
+        var carouselCountItems =  $('.products__slider .owl-item');
+        jQuery('.products__slider').on('initialized.owl.carousel changed.owl.carousel', function(e) {
+            if (!e.namespace)  {
+            return;
+            }
+            var carousel = e.relatedTarget;
+            var carouselCurentItem = carousel.relative(carousel.current()) + 1;
+            
+            console.log(carouselCountItems.length);
+            for(var i = 1; i <= carouselCountItems.length; i++){
+               $('.slider__navigations .dots').append('<span></span>')
+            }
+
+            var carouselItems = $('.slider__navigations .dots span')
+
+           jQuery.each(carouselItems, function(e){
+                $(this).removeClass('current-item')
+                if(carouselCurentItem == e + 1){
+                    $(this).addClass('current-item')
+                }
+           })
+
+
+
+
+        }).owlCarousel({
+            loop:false,
+            dots: false,
+            nav:false,
+            items: 1
+        });
+       
+    var owl = jQuery('.products__slider');
+
+    owl.owlCarousel();
+
+    // Custom Navigation Events
+    jQuery(".slider__navigations .btn-next").click(function(){
+        owl.trigger('next.owl.carousel');
+    })
+    jQuery(".slider__navigations .btn-prev").click(function(){
+        owl.trigger('prev.owl.carousel');
+    })
+
+    jQuery('.mobile-togler').on('click', function(){
+        jQuery('.mobile-togler').toggleClass('_active');
+        jQuery('.header').toggleClass('_nav-open')
+        jQuery('html').toggleClass('lock')
+   })
+   jQuery('.header nav ul li').on('click', function(){
+        jQuery('.mobile-togler').removeClass('_active');
+        jQuery('.header').removeClass('_nav-open')
+        jQuery('html').removeClass('lock')
+   })
+
+   jQuery('.popup__open').on('click', function(){
+        jQuery('.popup').addClass('_active')
+   })
+   jQuery('.popup__close').on('click', function(){
+        jQuery('.popup').removeClass('_active')
+   })
+   jQuery('.popup__close-button').on('click', function(){
+        jQuery('.popup').removeClass('_active')
+   })
+   jQuery('.popup__overlay').on('click', function(){
+        jQuery('.popup').removeClass('_active')
+   })
+    
+});
+  
+</script>

@@ -1,0 +1,147 @@
+.banner-business {
+    background-color: $primary;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -50px;
+    background-image: 
+        url('../img/banner--business/circle.png'),
+        url('../img/banner--business/item1.png'),
+        url('../img/banner--business/item2.png'),
+        url('../img/banner--business/item3.png'),
+        url('../img/banner--business/item4.png'),
+    ;
+    background-repeat: no-repeat;
+    background-size: 
+        250px 500px,
+        147px 233px,
+        70px 28px,
+        32px 32px,
+        60px 48px
+    ;
+    background-position: 
+        100% 50%,
+        0 100%,
+        10% 55%,
+        20% 35%,
+        5% 10%
+    ;
+    @media (max-width: 1200px) {
+        background-position: 
+            110% 50%,
+            0 100%,
+            7% 48%,
+            17% 26%,
+            5% 10%
+        ;
+    }
+    @media (max-width: 991px) {
+        background-image: 
+            url('../img/banner--business/mobile-item2.png'),
+            url('../img/banner--business/mobile-item.png'),
+            url('../img/banner--business/item2.png'),
+            url('../img/banner--business/item3.png'),
+            url('../img/banner--business/item4.png'),
+        ;
+        background-size: 
+            20px 20px,
+            147px 233px,
+            0 0,
+            32px 32px,
+            60px 48px
+        ;
+        background-position: 
+            50% 90%,
+            100% 100%,
+            7% 48%,
+            91% 20%,
+            2% 8%
+        ;
+    }
+    @media (max-width: $mobileSmall) {
+        background-size: 
+            20px 20px,
+            147px 233px,
+            0 0,
+            32px 32px,
+            41px 32px
+        ;
+        background-position: 
+            50% 85%,
+            100% 100%,
+            7% 48%,
+            94% 18%,
+            2% 8%
+        ;
+    }
+    .banner__container {
+        justify-content: center;
+        padding: 120px 0;
+        text-align: center;
+        color: #fff;
+        @media (max-width: $mobileSmall) {
+            padding: 40px 0 100px 0;
+        }
+
+    }
+    .banner__content {
+       
+        @media (min-width: 991px) {
+            max-width: 690px;
+        }
+        h5{
+            
+            max-width: 500px;
+            @media (max-width: 991px) {
+                max-width: 350px;
+            }
+            margin: 0 auto;
+        }
+        h1{
+            @media (max-width: $mobileSmall) {
+                
+                max-width: 350px;
+                margin: 0 auto;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .banner__row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+        margin-top: 40px;
+        gap: 40px;
+        @media (max-width: 991px) {
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+        @media (max-width: $mobileSmall) {
+            margin: 24px 0;
+        }
+        img{
+            width: 290px;
+            @media (max-width: 991px) {
+                width: 150px;
+            }
+        }
+    }
+    .button {
+        background-color: #fff;
+        color: $primary;
+        padding: 20px 40px;
+        border-radius: 48px;
+        @media (max-width: 991px) {
+            padding: 16px 32px;
+        }
+        &:hover{
+            background-color: $primaryLight;
+        }
+    }
+    .conditioner {
+        width: 720px;
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+}

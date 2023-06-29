@@ -1,0 +1,270 @@
+//====================================================================================================
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+.header{
+	padding-top: 24px;
+	padding-bottom: 24px;
+	.header__logo{
+		img{
+			width: 145px;
+			@media (max-width: $mobileSmall) {
+				width: 87px;
+			}
+		}
+	}
+}
+.header__container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	nav{
+		ul{
+			display: flex;
+			gap: 24px;
+			align-items: center;
+			li{
+				padding-left: 0;
+				margin-bottom: 0;
+				a{
+					display: flex;
+					align-items: center;
+					svg{
+						margin-right: 12px;
+					}
+					&:hover{
+						color: $primary;
+					}
+				}
+				&.current_page{
+					a{
+						color: $primary;
+						&:hover{
+							color: $primaryExtra;
+						}
+					}
+				}
+				&::before{
+					display: none;
+				}
+				&.lang{
+					display: flex;
+					gap: 8px;
+					align-items: center;
+					a{
+						color: $mainColor;
+						opacity: .4;
+						&.current-lang{
+							color: $primary !important;
+							opacity: 1;
+						}
+					}
+					span{
+						color: $mainColor;
+						opacity: .4;
+					}
+				}
+			}
+		}
+	}
+	.header__contacts{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		.phones {
+			display: flex;
+			flex-direction: column;
+			a{
+				font-weight: 700;
+				font-size: 20px;	
+				line-height: 1.4;
+				
+			}
+		}
+	}
+	
+	.header__socials {
+		display: flex;
+		gap: 20px;
+	}
+	
+
+}
+@media (max-width: 1320px) {
+	.mobile-togler{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		flex-direction: column;
+		height: 12px;
+		width: 20px;
+		position: relative;
+		z-index: 2;
+		@media (min-width: 1320px) {
+			display: none;
+		}
+		span{
+			background-color: $primary;
+			display: block;
+			width: 20px;
+			height: 1.5px;
+			border-radius: 1px;
+			position: absolute;
+			left: 0;
+			transition: transform .3s;
+			&:first-child{
+				transform: translateY(-4px);
+			}
+			&:last-child{
+				transform: translateY(4px);
+			}
+		}
+		&._active{
+			span{
+				&:first-child{
+					transform: rotate(45deg);
+				}
+				&:last-child{
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	.header{
+		&__container{
+			justify-content: flex-start;
+		}
+		&._nav-open{
+			nav{
+				transform: translateY(0);
+			}
+			
+			.header__contacts{
+				.header__socials{
+					visibility: visible;
+					opacity: 1;
+					z-index: 2;
+				}
+				.phones{
+					visibility: visible;
+					opacity: 1;
+					z-index: 2;
+				}
+			}
+
+		}
+		nav{
+			transform: translateY(-100%);
+			transition: .2s;
+			position: fixed;
+			left: 0;
+			top: 0;
+			background-color: #fff;
+			height: 100vh;
+			display: block;
+			width: 100%;
+			z-index: 1;
+			margin: 0 auto;
+			padding: 0 0.9375rem;
+			ul{
+				flex-direction: column;
+				gap: 0;
+				padding-top: 110px;
+				li{
+					padding: 16px 0;
+					width: 100%;
+					border-bottom: 1px solid $greyLine;
+					max-width: 83.875rem;
+					&.lang{
+						order: -1;
+					}
+					&:last-child{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+		.header__contacts{
+			margin-left: auto;
+			margin-right: 20px;
+			position: relative;
+			z-index: 2;
+			
+			.phones{
+				position: fixed;
+				bottom: 20px;
+				left: 0.9375rem;
+				z-index: 2;
+				z-index: -1;
+				visibility: hidden;
+				opacity: 0;
+			}
+			.header__socials{
+				position: fixed;
+				bottom: 20px;
+				right: 0.9375rem;
+				z-index: -1;
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+		.header__logo{
+			position: relative;
+			z-index: 2;
+		}
+	}
+	
+}

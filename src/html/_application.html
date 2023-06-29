@@ -1,0 +1,25 @@
+<div id="application" class="application">
+    <div class="application__container">
+        <div class="item">
+            
+            <form action="files/sendmail/sendmail.php" method="post" data-dev data-popup-message="#popup__message" >
+                <h2>Оставить заявку
+                    на консультацию</h2>
+                <label for="name">
+                    <span>Ваше имя</span>
+                    <input required id="name" name="name" type="text" placeholder="Андрей">
+                </label>
+                <label for="phone">
+                    <span>Номер телефона</span>
+                    <input required id="phone" name="phone" type="text" placeholder="+9ХХ-ХХ-ХХХХХХХ">
+                </label>
+                <input class="button-big button-1 popup__open" type="submit" value="Получить консультацию">
+            </form>
+        </div>
+        <div class="item">
+            <div class="applecation__images">
+                <img src="../img/worker.png" alt="worker">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,417 @@
+// Загальний файл елементів форм
+// Для підключення/відключення стилів конкретного елемента форми дивись base/forms/forms.scss
+@import "base/forms/forms";
+
+// Стилі попапів
+ @import "base/popup";
+
+// Стилі спойлерів
+// @import "base/spollers";
+
+// Стилі табів
+// @import "base/tabs";
+
+// Стилі мап
+// @import "base/maps";
+
+// Стилі блоку "показати ще"
+// @import "base/showmore";
+
+// Стилі для липкого блоку
+// @import "base/sticky";
+
+// Стилі для повноекранного блоку
+// @import "base/fullscreen";
+
+// Стилі для поекраної прокрутки
+// Styles for fullpage scroll
+// @import "base/fullpage";
+
+// Стилі для ripple ефекту
+// Styles for ripple effect
+// @import "base/ripple";
+
+// Стилі для кастомного курсору
+// Styles for custom cursor
+// @import "base/cursor";
+
+// Стилі для чуйних картинок (IBG)
+// Сніппет (HTML): ibg (div з картинкою та класами)
+// Сніппет (HTML): ibga (a з картинкою та класами)
+[class*="-ibg"] {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+[class*="-ibg_contain"] {
+	img {
+		object-fit: contain;
+	}
+}
+
+// Шаблони (заготівлі)
+// @extend %ім'я шаблону;
+// Сніппет (SCSS): ex
+
+// Лічильник для списку
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+	li {
+		position: relative;
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+// Адаптивне відео
+%responsiveVideo {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+// Відео як фон
+%videoBackground {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}
+// Сірий фільтр
+%grayfilter {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+// Скасувати виділення
+%noselect {
+	user-select: none;
+}
+// Дзеркальне відображення
+%mirror {
+	transform: scale(-1, 1);
+}
+// Плавний скролл
+%smoothscroll {
+	-webkit-overflow-scrolling: touch;
+}
+// Сховати скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+h1,
+.heading-1{
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.42;
+	margin-bottom: 32px;
+	@media(min-width: 1200px){
+		font-size: 72px;
+		line-height: 1;
+	}
+
+	
+}
+h2,
+.heading-2{
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.5;
+	margin-bottom: 32px;
+	@media(min-width: 1200px){
+		font-size: 48px;
+		line-height: 1.16;
+	}
+}
+h3,
+.heading-3{
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.4;
+	@media (min-width: 1200px) {
+		font-size: 36px;
+		line-height: 1.11;
+	}
+}
+h4,
+.subtitle-1{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.5;
+	@media (min-width: 1200px) {
+		font-size: 24px;
+		line-height: 1.5;
+	}
+}
+h5,
+.subtitle-2{
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.43;
+	@media (min-width: 1200px) {
+		font-size: 20px;
+		line-height: 1.4;
+	}
+}
+h6,
+.subtitle-3{
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 1.33;
+	@media (min-width: 1200px) {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}
+.button-1{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.555;
+	letter-spacing: -0.02em;
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
+}
+.button-2{
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1.43;
+	letter-spacing: -0.02em;
+	@media (min-width: 1200px) {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}
+.mini{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.5;
+	@media (min-width: 1200px) {
+		font-size: 14px;
+		line-height: 1.42;
+	}
+}
+.socials{
+	a{
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.telegram {
+		background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+		img{
+			margin-left: -3px;
+		}
+	}
+	.email {
+		background-color: $primary;
+	}	
+}
+.button {
+	padding: 12px 20px;
+	border-radius: 32px;
+	background-color: $primary;
+	color: #fff;
+	transition: .2s;
+	&:hover{
+		background-color: $primaryDark;
+	}
+}
+.button-big {
+	padding: 18px 32px;
+	border-radius: 32px;
+	background-color: $primary;
+	color: #fff;
+	transition: .2s;
+	&:hover{
+		background-color: $primaryDark;
+	}
+}
+a{
+	transition: .2s;
+	&:hover{
+		color: $primary;
+	}
+}
+ul{
+	li{
+		list-style: none;
+		padding-left: 20px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: 12px;
+		&::before{
+			content: '';
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: $primary;
+			display: block;
+			position: absolute;
+			top: 9px;
+			left: 0;
+		}
+	}
+}
+.background-layer{
+	background-image: url(../img/background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	gap:120px;
+	padding-top: 120px;
+	padding-bottom: 120px;
+	justify-content: center;
+	@media (max-width: 991px) {
+		gap: 0;
+		padding-top: 60px;
+		background-size: contain;
+		padding-bottom: 0;
+	}
+	@media (max-width: 991px) {
+		
+	}
+	@media (max-width: $mobileSmall) {
+		background-color: $primaryLight;
+		position: relative;
+		margin-top: -5px;
+		padding-top: 20px;
+		&::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 20px;
+			background-image: url(../img/background.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			top: -19px;
+			left: 0;
+		}
+	}
+	& > div{
+		width: 100%;
+		background-color: $primaryLight;
+		
+		@media (max-width: 991px) {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		@media (max-width: $mobileSmall) {
+			padding-bottom: 20px;
+			padding-top: 20px;
+		}
+		&:first-child{
+			background-color: transparent;
+			padding-top: 60px;
+			@media (max-width: $mobileSmall) {
+				padding-top: 0;
+			}
+		}
+		&:last-child{
+			padding-bottom: 60px;
+		}
+	}
+	
+}
+form{
+	max-width: 416px;
+	width: 100%;
+	label{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.43;
+		color: $greyContent;
+		display: flex;
+		flex-direction: column;
+		gap:12px;
+	}
+	input{
+		color: $mainColor;
+		border: 1px solid $greyLine;
+		border-radius: 16px;
+		padding: 18px 20px;
+		width: 100%;
+		outline: $primary;
+	}
+	
+}
+.owl-nav{}
+.slider__navigations {
+	display: flex;
+	gap: 24px;
+	.btn{
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: $primary;
+		transition: .2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover{
+			background-color: $primaryDark;
+		}
+		@media (max-width: 991px) {
+			display: none;
+		}
+	}
+	.dots{
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		span{
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: $primaryExtra;
+			display: block;
+			&.current-item{
+				background-color: $primary;
+			}
+		}
+	}
+}

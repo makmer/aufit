@@ -1,0 +1,45 @@
+.advice__container {
+    display: flex;
+    gap: 32px;
+    @media (max-width: 991px) {
+        flex-direction: column;
+    }
+    h3{
+        margin-bottom: 24px;
+        line-height: 1.5;
+        font-size: 32px;
+        @media (max-width: $mobileSmall) {
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+        @media (min-width: 1400px) {
+            padding-right: 80px;
+        }
+    }
+    p{
+        margin-bottom: 22px;
+        padding-right: 20px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    ul{
+        li{
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            padding-left: 0;
+            @media (max-width: $mobileSmall) {
+                margin-bottom: 17px;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+            &::before{
+                display: none;
+               
+            }
+        }
+    }
+}

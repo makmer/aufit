@@ -1,0 +1,48 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__overlay">
+
+		</div>
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="3.56519" y="2.29248" width="20" height="1.8" rx="0.9" transform="rotate(45 3.56519 2.29248)" fill="#969BA2"/>
+					<rect x="2.29248" y="16.4346" width="20" height="1.8" rx="0.9" transform="rotate(-45 2.29248 16.4346)" fill="#969BA2"/>
+				</svg>
+			</button>
+			<div class="popup__text">
+				<h3>Оставить заявку на консультацию</h3>
+				<form action="files/sendmail/sendmail.php" method="post" data-dev data-popup-message="#popup__message">
+					<label for="name">
+						<span>Ваше имя</span>
+						<input id="name" name="name" type="text" placeholder="Андрей">
+					</label>
+					<label for="phone">
+						<span>Номер телефона</span>
+						<input id="phone" name="phone" type="text" placeholder="+9ХХ-ХХ-ХХХХХХХ">
+					</label>
+					<input class="button-big button-1" type="submit" value="Получить консультацию">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="popup__message" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__overlay">
+
+		</div>
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="3.56519" y="2.29248" width="20" height="1.8" rx="0.9" transform="rotate(45 3.56519 2.29248)" fill="#969BA2"/>
+					<rect x="2.29248" y="16.4346" width="20" height="1.8" rx="0.9" transform="rotate(-45 2.29248 16.4346)" fill="#969BA2"/>
+				</svg>
+			</button>
+			<div class="popup__text popup__messages">
+				<h3>Спасибо за заявку</h3>
+				<p>Наш менеджер свяжется с вами в ближайшее время</p>
+			</div>
+		</div>
+	</div>
+</div>

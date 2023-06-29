@@ -1,0 +1,58 @@
+//====================================================================================================
+footer{
+    background-color: $primaryLight;
+    .footer__container{
+        display: flex;
+        @media (max-width: $mobileSmall) {
+            flex-direction: column;
+        }
+        .footer__contacts{
+            padding-top: 16px;
+            padding-bottom: 16px;
+            display: flex;
+            gap: 32px;
+            @media (max-width: $mobileSmall) {
+                flex-direction: column;
+                gap: 16px;
+            }
+            a{
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                &:hover{
+                    color: $primary;
+                }
+                .icons{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: $primary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &.telegram{
+                    .icons{
+                        background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+                        svg{
+                            margin-left: -2px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer__copiwriter{
+            display: flex;
+            align-items: center;
+            
+            @media (min-width: $mobileSmall) {
+                margin-left: auto;
+            }
+            @media (max-width: $mobileSmall) {
+                padding-bottom: 16px;
+            }
+        }
+
+    }
+}
+//====================================================================================================

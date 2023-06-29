@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"aufit business"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header--company.html',{})
+			<main class="page business-page">
+				<div class="banner-business">
+					<div class="banner__container">
+						<div class="banner__content">
+							<h1>Кондиционеры для твоих решений</h1>
+							<h5>Климатические кондиционеры высокого качества.
+								Климат - под Вашим контролем.</h5>
+								<div class="banner__row">
+									<img src="../img/logo-white.png" alt="">
+									<button class="button"><span class="subtitle-2 popup__open"  data-popup="#popup">Узнать цены</span></button>
+								</div>
+							
+							<img class="conditioner" src="../img/product.png" alt="conditioner">
+						</div>
+					</div>
+					
+				</div>
+				<div class="background-layer">
+					
+					@@include('html/_products-buissnes.html',{})
+					
+				</div>
+				
+				@@include('html/_application--company.html',{})
+				
+			</main>
+			@@include('html/_popup.htm',{})
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
